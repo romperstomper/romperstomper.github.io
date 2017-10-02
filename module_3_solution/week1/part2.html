@@ -1,0 +1,105 @@
+<doctype html>
+<head>
+	<style>
+		fieldset {
+			background: lightyellow;
+			border: 10px solid yellow;
+			margin-bottom: 10px;
+			width: 720px;
+		}
+		label {
+			width: 180px;
+			display: inline-block;
+			text-align: right;
+			vertical-align: top;
+		}
+		.sex {
+			width: auto;
+		}
+		.contact {
+			width: auto;
+		}
+		.red {
+			background-color: red;
+			text-align: center;
+			width: 50px;
+		}
+		.purple {
+			background-color: purple;
+			text-align: center;
+			width: 50px;
+		}
+		#address {
+			width: 360px;
+			height: 50px;
+		}
+	</style>
+	<title>Dating Web Site</title>
+</head>
+<body>
+	<h1>Please Enter Your Details For Our Dating Website!</h1>
+	<form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post">
+		<fieldset>
+			<legend>Your Face</legend>
+			<label for="file">Your image:</label>
+				<input type="file" id="file" required><br>
+			<label for="image">Image preview:</label>
+		</fieldset>
+		<fieldset>
+			<legend>Your General Details</legend>
+			<label for="name">Name:</label> 
+				<input type="text" id="name" placeholder="Your full name" required><br>
+			<label>Gender:</label>
+				<input type="radio" name="sex" id="male" value="male" required><span class="sex">Male</span>
+				<input type="radio" name="sex" id="female" value="female" required><span class="sex">Female</span><br>
+			<label for="age">Age:</label>
+				<input type="number" id="age" min="0" required><br>
+			<label for="birthday">Date of birth:</label>
+				<input type="date" id="birthday"><br>
+			<label for="color">Favorite color:</label>
+				<input type="color" id="color"><br>
+			<label>Which country:</label>
+				<select name="country">
+					<option></option>
+					<option value="hk">Hong Kong</option>
+					<option value="jp">Japan</option>
+					<option value-"kr">Korean</option>
+					<option value="us">USA</option>
+					<option value="ca">Canada</option>
+					<option value="cn">China</option>
+				</select><br>
+		</fieldset>
+		<fieldset>
+			<legend>Your indicators</legend>
+			<table>
+				<tr>
+					<td>
+						<label for="height">Height:</label><br>
+						<label for="salary">Salary:</label>
+					</td>
+					<td class="red">Short<br>Poor</td>
+					<td>
+						<input type="range" id="height" name="height" min="0" max="100"><br>
+						<input type="range" id="salary" name="salary" min="0" max="100">
+					</td>
+					<td class="purple">Tall<br>Rich</td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Your Contact Information</legend>
+			<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required><br>
+			<label for="tel">Mobile:</label>
+				<input type="tel" id="tel"><br>
+			<label for="address">Address:</label>
+				<textarea id="address"></textarea><br>
+			<label>Method to contact you:</label>
+				<input type="checkbox" id="contact-email" name="contact" value="email"><span class="contact">Email</span>
+				<input type="checkbox" id="contact-whatsapp" name="contact" value="whatsapp"><span class="contact">Whatsapp</span>
+				<input type="checkbox" id="contact-inappchat" name="contact" value="in-app-chat"><span class="contact">In-app chat</span>
+		</fieldset>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
