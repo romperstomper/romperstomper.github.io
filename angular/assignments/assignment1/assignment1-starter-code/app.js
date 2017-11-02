@@ -3,14 +3,26 @@
 
   angular.module('LunchCheck', [])
   .controller('LunchCheckController', function ($scope) {
-    $scope.input = "";
-    $scope.total = 0;
+    $scope.inputstr = "";
+    $scope.messagestr = "";
     
-    $scope.displayNumeric = function (){
-    var inputarray = $scope.input.split(","); 
-    $scope.total = inputarray.length;
+    $scope.displaymessage = function (){
+      $scope.messagestr = displaymessage($scope.inputstr);
     }
     
   });
+  function displaymessage(inputstr){
+    var numarry = inputstr.split(",");
+    var num = numarry.length;
+    if (inputstr.trim() == ""){
+      return "please enter data first";
+    }
+    else if (num <=3){
+      return "enjoy!"
+    }
+    else {
+      return "too much!"
+    }
+  }
 
 })();

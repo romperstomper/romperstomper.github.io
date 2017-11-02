@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Lunch Checker</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
@@ -10,28 +11,22 @@
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
   </head>
-<body>
-  <div class="container" ng-app="LunchCheck"> 
+<body ng-app="LunchCheck">
+  <div class="container" ng-controller="LunchCheckController"> 
      <h1>Lunch Checker</h1>
-         <div class="form-group" ng-controller="LunchCheckController">
-             <input id="lunch-menu" type="text" ng-model="input" ng-keyup="$event.keyCode == 13 && displayNumeric();" placeholder="list comma separated dishes you usually have for lunch"
+         <div class="form-group">
+             <input id="lunch-menu" type="text" ng-model="inputstr" 
+                ng-keyup="$event.keyCode == 13 && displaymessage();" 
+                placeholder="list comma separated dishes you usually have for lunch"
              class="form-control">
-            <br>Number of items is: {{total}}<br>
          </div>
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="displaymessage();">Check If Too Much</button>
          </div>
          <div class="form-group message">
-           <div ng-if="{{total}}== 0">
-             Please enter data first
-           <!-- Your message can go here. -->
+           {{messagestr}}
          </div>
    </div>
-  <script>
-    var elem = document.querySelector("[ng-app]");
-    console.log(elem);
-    console.log(elem.getAttribute('total'));
-  </script>
 
 </body>
 </html>
