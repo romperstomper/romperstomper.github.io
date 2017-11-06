@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <title>Shopping List Check Off</title>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
@@ -22,8 +25,8 @@
       }
     </style>
   </head>
-<body>
-  <div class="container">
+<body ng-app='ShoppingListCheckOff'>
+  <div class="container" ng-controller='ToBuyController'>
   <h1>Shopping List Check Off</h1>
 
   <div class="row">
